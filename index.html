@@ -34,35 +34,43 @@
   <script>
     const mangoRainContainer = document.querySelector('.mango-rain');
     const trigger = document.getElementById('rain-trigger');
+    let raining = false;
+    let rainInterval;
 
     function createMango() {
       const mango = document.createElement('div');
       mango.classList.add('rain-mango');
       mango.textContent = '🥭';
-      mango.style.left = Math.random() * 100 + 'vw';
-      mango.style.animationDuration = (3 + Math.random() * 3) + 's'; // random speed
+      mango.style.left = Math.random() * 100 + 'vw'; // anywhere across screen
+      mango.style.animationDuration = (3 + Math.random() * 4) + 's'; // speed
       mango.style.fontSize = (20 + Math.random() * 40) + 'px'; // varied sizes
       mangoRainContainer.appendChild(mango);
 
-      // Remove mango after it falls
+      // remove when done
       setTimeout(() => {
         mango.remove();
-      }, 6000);
+      }, 7000);
     }
 
-    function mangoRain() {
-      let count = 0;
-      const interval = setInterval(() => {
-        createMango();
-        count++;
-        if (count > 50) { // stop after 50 mangos
-          clearInterval(interval);
-        }
-      }, 100);
+    function startMangoRain() {
+      if (raining) return;
+      raining = true;
+      rainInterval = setInterval(createMango, 120); // spawn frequency
     }
 
-    // Easter egg trigger (click on title)
-    trigger.addEventListener('click', mangoRain);
+    function stopMangoRain() {
+      raining = false;
+      clearInterval(rainInterval);
+    }
+
+    // Click on the title to toggle mango rain
+    trigger.addEventListener('click', () => {
+      if (!raining) {
+        startMangoRain();
+      } else {
+        stopMangoRain();
+      }
+    });
   </script>
 </body>
 
