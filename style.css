@@ -1,28 +1,12 @@
 /* style.css */
 
 /* Background */
-/* body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: url("trungcoinsol_square.png") repeat center center fixed;
-  background-size: cover;
-  animation: moveBackground 60s linear infinite;
-  overflow-x: hidden;
-} */
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-
-  /* 🔥 fallback background (shows if image fails) */
-  background-color: yellow;
-
-  /* background image */
-  background: url("trungcoinsol_square.png") repeat center center fixed, yellow;
+  /* background: url("trungcoinsol_square.png_") repeat center center fixed; */
   background-size: cover;
-
   animation: moveBackground 60s linear infinite;
   overflow-x: hidden;
 }
