@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,22 +9,13 @@
 </head>
 
 <body>
-  <!-- Falling mangos layer -->
-  <div class="mango-container">
-    <div class="mango">🥭</div>
-    <div class="mango">🥭</div>
-    <div class="mango">🥭</div>
-    <div class="mango">🥭</div>
-    <div class="mango">🥭</div>
-    <div class="mango">🥭</div>
-    <div class="mango">🥭</div>
-    <div class="mango">🥭</div>
-  </div>
+  <!-- Falling mangos container (for Easter egg rain) -->
+  <div class="mango-rain"></div>
 
   <!-- Overlay for readability -->
   <div class="overlay">
     <div class="container center">
-      <h1 class="gradient">$TRUNG</h1>
+      <h1 class="gradient" id="rain-trigger">$TRUNG</h1>
       <p class="tagline">Buy $TRUNG. Get rich.</p>
 
       <!-- Buy button -->
@@ -41,7 +29,41 @@
       </ul>
     </div>
   </div>
+
+  <!-- JavaScript for Mango Rain Easter Egg -->
+  <script>
+    const mangoRainContainer = document.querySelector('.mango-rain');
+    const trigger = document.getElementById('rain-trigger');
+
+    function createMango() {
+      const mango = document.createElement('div');
+      mango.classList.add('rain-mango');
+      mango.textContent = '🥭';
+      mango.style.left = Math.random() * 100 + 'vw';
+      mango.style.animationDuration = (3 + Math.random() * 3) + 's'; // random speed
+      mango.style.fontSize = (20 + Math.random() * 40) + 'px'; // varied sizes
+      mangoRainContainer.appendChild(mango);
+
+      // Remove mango after it falls
+      setTimeout(() => {
+        mango.remove();
+      }, 6000);
+    }
+
+    function mangoRain() {
+      let count = 0;
+      const interval = setInterval(() => {
+        createMango();
+        count++;
+        if (count > 50) { // stop after 50 mangos
+          clearInterval(interval);
+        }
+      }, 100);
+    }
+
+    // Easter egg trigger (click on title)
+    trigger.addEventListener('click', mangoRain);
+  </script>
 </body>
 
 </html>
-
