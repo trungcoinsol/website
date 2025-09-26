@@ -1,32 +1,15 @@
-/* style.css */
-
-/* Background */
+/* Background fallback */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: url("trungcoinsol_background.png_") repeat center center fixed;
-  background-size: cover;
-  animation: moveBackground 60s linear infinite;
+  background: #fff8e7; /* light mango-ish background */
   overflow-x: hidden;
-}
-
-
-@keyframes moveBackground {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 50px 50px;
-  }
-  100% {
-    background-position: 0 0;
-  }
 }
 
 /* Overlay for readability */
 .overlay {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -150,15 +133,27 @@ h2 {
   opacity: 0.9;
 }
 
-/* Randomized positions and speeds */
-.mango:nth-child(1) { left: 10%; animation-duration: 8s; }
-.mango:nth-child(2) { left: 25%; animation-duration: 12s; }
-.mango:nth-child(3) { left: 40%; animation-duration: 10s; }
-.mango:nth-child(4) { left: 55%; animation-duration: 14s; }
-.mango:nth-child(5) { left: 70%; animation-duration: 11s; }
-.mango:nth-child(6) { left: 85%; animation-duration: 9s; }
-.mango:nth-child(7) { left: 50%; animation-duration: 13s; }
-.mango:nth-child(8) { left: 15%; animation-duration: 15s; }
+/* 20 mango variations: positions + durations */
+.mango:nth-child(1) { left: 5%; animation-duration: 9s; }
+.mango:nth-child(2) { left: 10%; animation-duration: 12s; }
+.mango:nth-child(3) { left: 15%; animation-duration: 11s; }
+.mango:nth-child(4) { left: 20%; animation-duration: 14s; }
+.mango:nth-child(5) { left: 25%; animation-duration: 13s; }
+.mango:nth-child(6) { left: 30%; animation-duration: 10s; }
+.mango:nth-child(7) { left: 35%; animation-duration: 15s; }
+.mango:nth-child(8) { left: 40%; animation-duration: 12s; }
+.mango:nth-child(9) { left: 45%; animation-duration: 11s; }
+.mango:nth-child(10) { left: 50%; animation-duration: 13s; }
+.mango:nth-child(11) { left: 55%; animation-duration: 14s; }
+.mango:nth-child(12) { left: 60%; animation-duration: 9s; }
+.mango:nth-child(13) { left: 65%; animation-duration: 15s; }
+.mango:nth-child(14) { left: 70%; animation-duration: 12s; }
+.mango:nth-child(15) { left: 75%; animation-duration: 10s; }
+.mango:nth-child(16) { left: 80%; animation-duration: 14s; }
+.mango:nth-child(17) { left: 85%; animation-duration: 11s; }
+.mango:nth-child(18) { left: 90%; animation-duration: 13s; }
+.mango:nth-child(19) { left: 95%; animation-duration: 12s; }
+.mango:nth-child(20) { left: 98%; animation-duration: 10s; }
 
 @keyframes fall {
   0% {
@@ -170,36 +165,3 @@ h2 {
     opacity: 0;
   }
 }
-
-/* Mango Rain Easter Egg */
-.mango-rain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 999; /* on top of everything */
-}
-
-.rain-mango {
-  position: absolute;
-  top: -50px;
-  animation-name: mangoFall;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  opacity: 0.9;
-}
-
-@keyframes mangoFall {
-  0% {
-    transform: translateY(-50px) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
