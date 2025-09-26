@@ -167,55 +167,5 @@ h2 {
 }
 
 
-/* How to Buy Section */
-.how-to-buy {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-  margin: 30px auto 50px auto;
-  max-width: 650px;
-}
 
-.step-card {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: #ffcc00;
-  border: 2px solid #006400;
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-size: 18px;
-  color: #006400;
-  font-weight: normal; /* <-- text no longer bold */
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.step-card:hover {
-  background: #ffd633;
-  transform: translateY(-2px);
-}
-
-.step-card .number {
-  background: #006400;
-  color: #fff;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;
-  font-size: 16px;
-  font-weight: bold; /* keep numbers bold for clarity */
-}
-
-.step-card p {
-  margin: 0;
-}
-
-.step-card a {
-  color: #006400;
-  text-decoration: underline;
-  font-weight: normal; /* links not bold */
-}
 
