@@ -9,13 +9,34 @@
 </head>
 
 <body>
-  <!-- Falling mangos container (for Easter egg rain) -->
-  <div class="mango-rain"></div>
+  <!-- Falling mangos layer -->
+  <div class="mango-container">
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+    <div class="mango">🥭</div>
+  </div>
 
   <!-- Overlay for readability -->
   <div class="overlay">
     <div class="container center">
-      <h1 class="gradient" id="rain-trigger">$TRUNG</h1>
+      <h1 class="gradient">$TRUNG</h1>
       <p class="tagline">Buy $TRUNG. Get rich.</p>
 
       <!-- Buy button -->
@@ -29,49 +50,6 @@
       </ul>
     </div>
   </div>
-
-  <!-- JavaScript for Mango Rain Easter Egg -->
-  <script>
-    const mangoRainContainer = document.querySelector('.mango-rain');
-    const trigger = document.getElementById('rain-trigger');
-    let raining = false;
-    let rainInterval;
-
-    function createMango() {
-      const mango = document.createElement('div');
-      mango.classList.add('rain-mango');
-      mango.textContent = '🥭';
-      mango.style.left = Math.random() * 100 + 'vw'; // anywhere across screen
-      mango.style.animationDuration = (3 + Math.random() * 4) + 's'; // speed
-      mango.style.fontSize = (20 + Math.random() * 40) + 'px'; // varied sizes
-      mangoRainContainer.appendChild(mango);
-
-      // remove when done
-      setTimeout(() => {
-        mango.remove();
-      }, 7000);
-    }
-
-    function startMangoRain() {
-      if (raining) return;
-      raining = true;
-      rainInterval = setInterval(createMango, 120); // spawn frequency
-    }
-
-    function stopMangoRain() {
-      raining = false;
-      clearInterval(rainInterval);
-    }
-
-    // Click on the title to toggle mango rain
-    trigger.addEventListener('click', () => {
-      if (!raining) {
-        startMangoRain();
-      } else {
-        stopMangoRain();
-      }
-    });
-  </script>
 </body>
 
 </html>
