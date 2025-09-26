@@ -1,74 +1,172 @@
 /* style.css */
 
+/* Background */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("trungcoin.png") repeat center center fixed;
+  background-size: cover;
+  animation: moveBackground 60s linear infinite;
+  overflow-x: hidden;
 }
 
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 50px 50px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Overlay for readability */
+.overlay {
+  background: rgba(255, 255, 255, 0.8);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Main container */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 600px;
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  background: #fff9e6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .gradient {
-    background: linear-gradient(to right, #ff8a00, #da1b60);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #ffcc00, #ff6600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 #006400;
 }
 
-.center {
-    text-align: center;
+.tagline {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 25px;
 }
 
-p {
-    margin-bottom: 20px;
-    color: #555;
+/* 🚀 Buy Button */
+.buy-btn {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px 30px;
+  margin-bottom: 35px;
+  background: linear-gradient(90deg, #ffcc00, #ff6600);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 3px solid #006400;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: pulse 1.5s infinite;
 }
 
-a {
-    color: #da1b60;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.buy-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 102, 0, 0.8);
 }
 
-a:hover {
-    color: #ff8a00;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-h1 {
-    font-size: 36px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
+/* Headings and links */
 h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #006400;
 }
 
 .links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .links li {
-    margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .links li a {
-    display: block;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #da1b60;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  display: block;
+  padding: 12px 20px;
+  font-weight: bold;
+  background-color: #ffcc00;
+  border: 2px solid #006400;
+  border-radius: 10px;
+  color: #006400;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .links li a:hover {
-    background-color: #da1b60;
-    color: #fff;
+  background-color: #ff6600;
+  color: #fff;
 }
+
+.ca {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+  font-family: monospace;
+}
+
+/* Falling mangos 🍋 */
+.mango-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mango {
+  position: absolute;
+  top: -50px;
+  font-size: 32px;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+/* Randomized positions and speeds */
+.mango:nth-child(1) { left: 10%; animation-duration: 8s; }
+.mango:nth-child(2) { left: 25%; animation-duration: 12s; }
+.mango:nth-child(3) { left: 40%; animation-duration: 10s; }
+.mango:nth-child(4) { left: 55%; animation-duration: 14s; }
+.mango:nth-child(5) { left: 70%; animation-duration: 11s; }
+.mango:nth-child(6) { left: 85%; animation-duration: 9s; }
+.mango:nth-child(7) { left: 50%; animation-duration: 13s; }
+.mango:nth-child(8) { left: 15%; animation-duration: 15s; }
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
