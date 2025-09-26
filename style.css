@@ -180,7 +180,7 @@ h2 {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: 999; /* above everything */
+  z-index: 999; /* on top of everything */
 }
 
 .rain-mango {
@@ -202,5 +202,4 @@ h2 {
     opacity: 0;
   }
 }
-
 
