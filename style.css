@@ -165,3 +165,53 @@ h2 {
     opacity: 0;
   }
 }
+
+
+/* How to Buy Section */
+.how-to-buy {
+  background: #fff9e6; /* same soft mango tone as container */
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+  max-width: 600px;
+  margin: 20px auto 40px auto;
+}
+
+.how-to-buy .step {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.how-to-buy .number {
+  background: linear-gradient(90deg, #ffcc00, #ff6600);
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 16px;
+  border: 2px solid #006400;
+  box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+}
+
+.how-to-buy a {
+  color: #006400;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.how-to-buy a:hover {
+  color: #ff6600;
+  border-bottom: 2px solid #ff6600;
+}
